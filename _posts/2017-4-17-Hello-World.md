@@ -1,10 +1,8 @@
 --
-layout: post
-title: What using regex feels like! (source codefights FB )
+What using regex feels like!
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
-
+Not for long though as it is one of my investigation topics here at Metis. 
 ![_config.yml]({{ site.baseurl }}/images/regex.gif)
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+Stay tuned! 

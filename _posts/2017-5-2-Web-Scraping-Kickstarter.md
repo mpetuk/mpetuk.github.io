@@ -1,10 +1,14 @@
 ---
+layout: post
+title: Project Luther
+---
+---
 “Luther is a brilliant but emotionally impulsive detective who is tormented by the dark side of humanity while hunting down murderers.”
 ---
 
 I love it that Metis names our projects after characters of different drama series and that degree of drama rises, appropriately, each week. As such, we went from “Law and Order SVU” (week 1) to “Luther” (week 2)  to “The Wire” (week 3). 
 
-![_config.yml]({{ site.baseurl }}/images/Luther.jpg)
+![Luther]({{ site.baseurl }}/images/Luther.jpg)
 
 And this story is about Project Luther.  The task was to come up with a question that can be answered by means of linear regression algorithm. Sounds easy enough, right? But wait - there is more! The data for the project was to be web-scaped.
 
@@ -46,7 +50,7 @@ This version of the model was explaining 75% of variation in project’s pledged
 
 Here is a chart of observed pledged amounts versus predicted by model with three inputs:
 
-![_config.yml]({{ site.baseurl }}/images/stations_1.jpg)
+![Model]({{ site.baseurl }}/images/stations_1.png)
 
 
 The big mass of data points near the y-axis, made me think that my target varies much more than my inputs and one way to correct for it is to build separate models for smaller pledged amounts and larger ones. The distribution of the dependent variable indicated that $1,000 is a good threshold. So I built two more models. The smaller pledged amounts turned out to be dependent on number of backers only, while larger ones were influenced by “Projects we love” badge and location, in addition to days left and pledge window less than 30 days indicator.

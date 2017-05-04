@@ -22,7 +22,7 @@ Kickstarter’s web site is built using XML data, which makes it difficult to sc
 
 Selenium is a suite of tools to automate web browsers across many platforms. It allows, among other things, access to web sites and interaction with their content from Python, for example. I mean, look at this thing going:
 
-![Slnm]({{ site.baseurl }}/images/slnmdemo.gif)
+![Slnm]({{ site.baseurl }}/images/demo.gif)
 
 It is so cool! It can simulate a real user working with a browser. While many web scraping programs do use a real web browser for data extraction, in most cases the browser they use is WebBrowser Control, which is Internet Explorer. Selenium's WebDriver, however, works with a variety of browsers. It can scrape complicated web pages with dynamic content (like Kickstarter.com). It can even take screenshots of the webpage. It can be cumbersome, but a great web-scraping tool nevertheless.  
 

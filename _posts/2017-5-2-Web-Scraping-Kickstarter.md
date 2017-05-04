@@ -4,6 +4,7 @@ title: Web-Scraping Kickstarter
 ---
 ---
 “Luther is a brilliant but emotionally impulsive detective who is tormented by the dark side of humanity while hunting down murderers."
+
 ---
 
 I love it that Metis names our projects after characters of different drama series and that degree of drama rises, appropriately, each week. As such, we went from “Law and Order SVU” (week 1) to “Luther” (week 2)  to “The Wire” (week 3).
@@ -23,6 +24,10 @@ Kickstarter’s web site is built using XML data, which makes it difficult to sc
 Selenium is a suite of tools to automate web browsers across many platforms. It allows, among other things, access to web sites and interaction with their content from Python, for example. I mean, look at this thing going:
 
 ![Slnm]({{ site.baseurl }}/images/slnmdemo.gif)
+
+(Zach, I would prefer to use linke below instead but I cant make it render. Is it too big or something?)
+
+![demo]({{ site.baseurl }}/images/demo.gif)
 
 It is so cool! It can simulate a real user working with a browser. While many web scraping programs do use a real web browser for data extraction, in most cases the browser they use is WebBrowser Control, which is Internet Explorer. Selenium's WebDriver, however, works with a variety of browsers. It can scrape complicated web pages with dynamic content (like Kickstarter.com). It can even take screenshots of the webpage. It can be cumbersome, but a great web-scraping tool nevertheless.  
 

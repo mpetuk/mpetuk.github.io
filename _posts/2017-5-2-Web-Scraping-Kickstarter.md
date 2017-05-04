@@ -22,11 +22,11 @@ Kickstarter’s web site is built using XML data, which makes it difficult to sc
 
 Selenium is a suite of tools to automate web browsers across many platforms. It allows, among other things, access to web sites and interaction with their content from Python, for example. I mean, look at this thing going:
 
-![selenium]({{ site.baseurl }}/images/slnmdemo.gif)
+![selenium]({{ site.baseurl }}/images/slnmdemo2.gif)
 
 It is so cool! It can simulate a real user working with a browser. While many web scraping programs do use a real web browser for data extraction, in most cases the browser they use is WebBrowser Control, which is Internet Explorer. Selenium's WebDriver, however, works with a variety of browsers. It can scrape complicated web pages with dynamic content (like Kickstarter.com). It can even take screenshots of the webpage. It can be cumbersome, but a great web-scraping tool nevertheless.  
 
-Selenium allowed me to access each of Kickstarter’s 15 category pages, where I scraped links to the projects within that category. The tricky part was to make Selenium scroll down the page, so that I could load more than 20 (default) projects. I was able to do it with these few lines of code:
+Selenium allowed me to access each of Kickstarter’s 15 category pages, where I scraped links to the projects within that category. The tricky part was to make Selenium scroll down the page, so that I could load more than 20 (default) projects. I was able to do it with these few lines of code (I also had to manually activate the browser window to load more than 2 pages worth of projects):
 
 ```
    time.sleep(2)
@@ -50,7 +50,7 @@ try:
 except:
     pass
 ```
-Finally, after a couple of days of web-scraping, I have got my data. But it needed much TLC - parsing, recoding, etc., as it came in strings as following example:
+Finally, after a couple of days of web-scraping, I have got my data. But it needed much TLC - parsing, recoding, etc., because it came as strings like an example below:
 ```
 '$19,846\npledged of $60,000 goal\n98\nbackers\n23\ndays to go'
 ```

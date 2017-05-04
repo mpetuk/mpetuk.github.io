@@ -12,7 +12,7 @@ I love it that Metis names our projects after characters of different drama seri
 
 And this story is about Project Luther.  The task was to come up with a question that can be answered by means of linear regression algorithm. Sounds easy enough, right? But wait - there is more! The data for the project was to be web-scraped.
 
-### Scraping the World Wide Web. ### 
+### Scraping the World Wide Web ### 
 
 I decided that Kickstarter.com is a good candidate with goal and pledged amounts and other project characteristics available and that it would be interesting, indeed,  to try to predict project success by predicting its pledged amount.
 
@@ -25,7 +25,8 @@ Selenium is a suite of tools to automate web browsers across many platforms. It 
 ![selenium]({{ site.baseurl }}/images/slnmdemo.gif)
 
 It is so cool! It can simulate a real user working with a browser. While many web scraping programs do use a real web browser for data extraction, in most cases the browser they use is WebBrowser Control, which is Internet Explorer. Selenium's WebDriver, however, works with a variety of browsers. It can scrape complicated web pages with dynamic content (like Kickstarter.com). It can even take screenshots of the webpage. It can be cumbersome, but a great web-scraping tool nevertheless.  
-It allowed me to access each of Kickstarter’s 15 category pages, where I scraped links to the projects within that category. The tricky part was to make Selenium scroll down the page, so that I could load more than 20 (default) projects. I was able to do it with these few lines of code:
+
+Selenium allowed me to access each of Kickstarter’s 15 category pages, where I scraped links to the projects within that category. The tricky part was to make Selenium scroll down the page, so that I could load more than 20 (default) projects. I was able to do it with these few lines of code:
 
 ```
    time.sleep(2)

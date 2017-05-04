@@ -1,9 +1,12 @@
 ---
 layout: post
-title: Project Luther
+title: Web-Scraping Kickstarter
 ---
+
 ---
+
 “Luther is a brilliant but emotionally impulsive detective who is tormented by the dark side of humanity while hunting down murderers.”
+
 ---
 
 I love it that Metis names our projects after characters of different drama series and that degree of drama rises, appropriately, each week. As such, we went from “Law and Order SVU” (week 1) to “Luther” (week 2)  to “The Wire” (week 3). 
@@ -18,9 +21,11 @@ Quick refresher: Kickstarter is a platform for creative projects to get crowd-fu
 
 Kickstarter’s web site is built using XML data, which makes it difficult to scrape, but in the end, Selenium did the magic.
 
-Selenium, by the way, is a suite of tools to automate web browsers across many platforms. It allows, among other things, access to web sites and interaction with their content from Python, for example.
+Selenium is a suite of tools to automate web browsers across many platforms. It allows, among other things, access to web sites and interaction with their content from Python, for example. I mean, look at this thing going:
 
-It allowed me to access each of 15 categories pages and scraped the links to the projects within. The tricky part was to make  Selenium scroll the page, so that I could load more than 20 (default) projects.  I was able to do it with this few lines of code:
+![selenium]({{ site.baseurl }}/images/slnmdemo.gif)
+
+It is so cool! It allowed me to access each of Kickstarter’s 15 category pages, where I scraped links to the projects within that category. The tricky part was to make Selenium scroll down the page, so that I could load more than 20 (default) projects.  I was able to do it with this few lines of code:
 
     
     time.sleep(2)
@@ -44,18 +49,24 @@ I was able to scrape 3,169 projects overnight. When I looked at the results, how
 
 Finally, after a couple of days of web-scraping, I have got my data. But it needed much TLC - parsing, recoding, etc., upon which I had a nice list of project features to model on: goal amount, number of backers, days left before expiry date, pledge time window between launch and expiry date, “Projects We Love” badge (something Kickstarter assigns), and country indicator.
 
-First, straight-up version of the model turned out explaining only 25% variation in pledged amount and many of listed features were not significant. Upon another round of explanatory analysis, I have recoded pledge window into an indicator that it was no more than 30 days.  
+A first pass, straight-up version of the model turned out to explain only 25% variation in pledged amount and many of listed features were not significant. Upon another round of explanatory analysis, I have recoded pledge window into an indicator that it was no more than 30 days.  
 
-This version of the model was explaining 75% of variation in project’s pledged amount. This model had just three inputs: number of backers, days left to pledge, and the pledge window less than 30 days indicator. Number of backers were increasing pledged amount (not surprisingly) while the other two inputs have negative impact on it.
+This version of the model explained 75% of variation in project’s pledged amount. This model had just three inputs: number of backers, days left to pledge, and the pledge window less than 30 days indicator. Number of backers were increasing pledged amount (not surprisingly) while the other two inputs have negative impact on it.
 
 Here is a chart of observed pledged amounts versus predicted by model with three inputs:
 
 ![Model]({{ site.baseurl }}/images/stations_1.png)
 
-
 The big mass of data points near the y-axis, made me think that my target varies much more than my inputs and one way to correct for it is to build separate models for smaller pledged amounts and larger ones. The distribution of the dependent variable indicated that $1,000 is a good threshold. So I built two more models. The smaller pledged amounts turned out to be dependent on number of backers only, while larger ones were influenced by “Projects we love” badge and location, in addition to days left and pledge window less than 30 days indicator.
 
-Ta-da and phew! Talking about drama and "tormented"! Just kidding. Would be great to add text analysis to this project later. Could be a great insight into what makes people click (or is it "kick"?).
+Below are the predictions versus observed pledged amounts from the two models:
+
+![Model1]({{ site.baseurl }}/images/le1k_adj.png)
+
+![Model2]({{ site.baseurl }}/images/gt1k_adj.png)
+
+
+Ta-da. Talking about drama and "tormented"! Just kidding. Would be great to add text analysis to this project later. Could be a great insight into what makes people click (or is it "kick"?).
 Also, you may appreciate the tongue-in-cheek title of this post. No? Tough crowd, heh.
 
-I can't wait to see what the next project is gonna be. My money is on Vic Mackey.
+I can't wait to see if the next project is gonna be. My money is on Vic Mackey.
